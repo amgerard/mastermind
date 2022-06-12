@@ -11,14 +11,14 @@ class AnalystPlayer:
 
     def get_initial_guess(self):
         return [Color.White, Color.White, Color.Yellow, Color.Yellow]
-        return [Color.White, Color.Yellow, Color.Blue, Color.Red]
+        #return [Color.White, Color.Yellow, Color.Blue, Color.Red]
 
     def get_guess(self):
         #return Guess([Color.Yellow,Color.Yellow, Color.Red, Color.Blue])
         if self.game.guesses == []: return Guess(self.get_initial_guess())
         return Guess(self.get_knuth_guess())
-        return Guess(self.get_simple_guess())
-        return Guess(self.get_max_entropy_guess())
+        #return Guess(self.get_simple_guess())
+        #return Guess(self.get_max_entropy_guess())
 
     def get_max_entropy_guess(self):
         return [random.choice(list(Color)) for _ in range(self.game.N)]
